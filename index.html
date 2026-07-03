@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Portfolio Fernaldi Soepono - Siswa SMK Wikrama Bogor bidang IT, Networking, Cyber Security, Cloud Computing">
+    <meta name="keywords" content="Fernaldi Soepono, portfolio, IT, networking, cyber security, cloud computing, sertifikat, TJKT">
+    <meta name="author" content="Fernaldi Soepono">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Fernaldi Soepono | Portfolio">
+    <meta property="og:description" content="Portfolio siswa SMK Wikrama Bogor bidang IT dan TJKT">
+    <meta property="og:type" content="website">
+    
+    <title>Fernaldi Soepono | Portfolio</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ========================================
+                   ROOT VARIABLES & RESET
+                ======================================== */
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #121212;
+            --bg-card: #1a1a1a;
+            --bg-hover: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #aaaaaa;
+            --text-muted: #666666;
+            --border-color: #2a2a2a;
+            --border-hover: #5a5a5a;
+            --shadow-color: rgba(0,0,0,0.7);
+            --transition-speed: 0.3s;
+            --font-main: 'Inter', 'Poppins', sans-serif;
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        /* Light mode */
+        body.light-mode {
+            --bg-primary: #f5f5f5;
+            --bg-secondary: #ffffff;
+            --bg-card: #f0f0f0;
+            --bg-hover: #e5e5e5;
+            --text-primary: #1a1a1a;
+            --text-secondary: #444444;
+            --text-muted: #888888;
+            --border-color: #d0d0d0;
+            --border-hover: #888888;
+            --shadow-color: rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            min-height: 100vh;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ========================================
+                   CONTAINER
+                ======================================== */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 2rem 4rem;
+        }
+
+        /* ========================================
+                   THEME TOGGLE
+                ======================================== */
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+            border-color: var(--border-hover);
+        }
+
+        /* ========================================
+                   HEADER / HERO
+                ======================================== */
+        .hero {
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        body.light-mode .hero h1 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #555555 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* ========================================
+                   NAVIGATION
+                ======================================== */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+            transition: all 0.2s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--text-primary);
+            transition: width 0.25s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* ========================================
+                   SECTIONS
+                ======================================== */
+        section {
+            margin: 5rem 0;
+            scroll-margin-top: 6rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: -0.3px;
+            color: var(--text-primary);
+            border-left: 4px solid var(--text-primary);
+            padding-left: 1rem;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.5s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================
+                   ABOUT SECTION
+                ======================================== */
+        .about-grid {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1.2;
+        }
+
+        .about-text p {
+            font-size: 1.12rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-highlight {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-photo {
+            flex: 0.8;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 260px;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 20px 35px -10px var(--shadow-color);
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.2), 0 25px 40px -12px black;
+            border-color: var(--text-primary);
+        }
+
+        /* ========================================
+                   SKILL TAGS
+                ======================================== */
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-card);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        /* ========================================
+                   SKILL PROGRESS
+                ======================================== */
+        .skill-progress {
+            margin-top: 2rem;
+            max-width: 500px;
+        }
+
+        .skill-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-item span {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--text-secondary), var(--text-primary));
+            border-radius: 10px;
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+            width: 0%;
+        }
+
+        .progress-fill.animated {
+            width: var(--target-width);
+        }
+
+        /* ========================================
+                   CERTIFICATE GRID
+                ======================================== */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .cert-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        .cert-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--border-hover);
+            box-shadow: 0 15px 40px var(--shadow-color);
+        }
+
+        .cert-card::after {
+            content: '🔍 Klik untuk preview';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.75);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+            font-weight: 500;
+        }
+
+        .cert-card:hover::after {
+            opacity: 1;
+        }
+
+        .cert-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cert-img-wrapper img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cert-card:hover .cert-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .img-landscape {
+            object-fit: cover;
+        }
+
+        .img-cisco {
+            object-fit: contain;
+            padding: 18px;
+        }
+
+        .img-contain {
+            object-fit: contain;
+            padding: 12px;
+        }
+
+        .cert-info {
+            padding: 22px;
+            border-top: 1px solid var(--border-color);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cert-info h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .cert-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cert-info p i {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        /* ========================================
+                   MODAL
+                ======================================== */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(12px);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .cert-modal-content {
+            position: relative;
+            margin: 5% auto;
+            max-width: 800px;
+            padding: 20px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .cert-modal-content img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            border: 2px solid var(--border-color);
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            color: #fff;
+            font-size: 45px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+            background: rgba(255,0,0,0.3);
+            border-color: #ff4444;
+        }
+
+        #modalInfo {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        #modalInfo h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #modalInfo p {
+            color: #aaaaaa;
+            font-size: 1rem;
+        }
+
+        /* ========================================
+                   CONTACT
+                ======================================== */
+        .contact-info {
+            background: var(--bg-card);
+            border-radius: 32px;
+            padding: 2rem 2.5rem;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            backdrop-filter: blur(2px);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            background: var(--bg-secondary);
+            padding: 0.75rem 1.8rem;
+            border-radius: 60px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            flex: 0 1 auto;
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .contact-item:hover {
+            background: var(--bg-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--shadow-color);
+        }
+
+        .contact-item i {
+            font-size: 1.6rem;
+            width: 32px;
+            color: var(--text-primary);
+        }
+
+        .contact-item a, .contact-item span {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+
+        /* Instagram specific */
+        .contact-item.instagram i {
+            color: #E4405F;
+        }
+
+        .contact-item.instagram:hover {
+            border-color: #E4405F;
+            box-shadow: 0 5px 20px rgba(228, 64, 95, 0.2);
+        }
+
+        /* ========================================
+                   BACK TO TOP
+                ======================================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 25px var(--shadow-color);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            backdrop-filter: blur(4px);
+            font-size: 1.2rem;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: var(--text-primary);
+            box-shadow: 0 12px 35px var(--shadow-color);
+        }
+
+        /* ========================================
+                   FOOTER
+                ======================================== */
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+                   ANIMATIONS
+                ======================================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+                   RESPONSIVE
+                ======================================== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-menu {
+                gap: 1.2rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.95rem;
+            }
+
+            .about-grid {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .about-text {
+                text-align: left;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1.5rem;
+            }
+
+            .contact-item {
+                justify-content: center;
+                min-width: auto;
+                padding: 0.7rem 1.2rem;
+            }
+
+            .cert-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .cert-modal-content {
+                margin: 10% auto;
+                padding: 10px;
+            }
+
+            .modal-close {
+                right: 10px;
+                top: 5px;
+                width: 40px;
+                height: 40px;
+                font-size: 35px;
+            }
+
+            .skill-progress {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-img {
+                max-width: 200px;
+            }
+
+            .about-highlight {
+                font-size: 1.3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-item {
+                font-size: 0.95rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .cert-card::after {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== THEME TOGGLE ===== -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <div class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- ===== MODAL ===== -->
+    <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-label="Certificate preview">
+        <div class="cert-modal-content">
+            <span class="modal-close" id="modalClose" aria-label="Close modal">&times;</span>
+            <img id="modalImg" src="" alt="Preview Sertifikat">
+            <div id="modalInfo"></div>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTAINER ===== -->
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="hero">
+            <h1>Fernaldi Soepono</h1>
+            <nav class="nav-menu" aria-label="Main navigation">
+                <a href="#tentang-saya">Tentang Saya</a>
+                <a href="#sertifikat">Sertifikat</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+        </header>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="tentang-saya">
+            <h2 class="section-title visible">Tentang Saya</h2>
+            <div class="about-grid fade-up">
+                <div class="about-text">
+                    <div class="about-highlight">Halo! Saya Fernaldi Soepono</div>
+                    <p>Saya seorang siswa SMK Wikrama Bogor bidang IT dan jurusan TJKT yang memiliki minat besar pada Teknologi, Networking, Cyber Security, Cloud Computing, Ansible Automation dan AI.</p>
+                    <p style="margin-top: 1rem;">Website ini berisi informasi tentang saya, sertifikat pencapaian saya, dan cara menghubungi saya.</p>
+                    
+                    <!-- Skill Tags -->
+                    <div class="skill-tags">
+                        <span class="skill-tag">🌐 Networking</span>
+                        <span class="skill-tag">🔒 Cyber Security</span>
+                        <span class="skill-tag">☁️ Cloud Computing</span>
+                        <span class="skill-tag">🤖 Ansible</span>
+                        <span class="skill-tag">🧠 AI</span>
+                        <span class="skill-tag">🐍 Python</span>
+                        <span class="skill-tag">🐧 Linux</span>
+                    </div>
+
+                    <!-- Skill Progress -->
+                    <div class="skill-progress">
+                        <div class="skill-item">
+                            <span>Networking</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Cyber Security</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Cloud Computing</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="65"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Linux System Admin</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Ansible Automation</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="40"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python Programming</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="35"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-photo">
+                    <img src="https://placehold.co/400x400/2c2c2c/ffffff?text=Fernaldi" 
+                         alt="Foto Fernaldi Soepono" 
+                         class="profile-img" 
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x400/333/fff?text=Fernaldi';">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CERTIFICATES ===== -->
+        <section id="sertifikat">
+            <h2 class="section-title">Sertifikasi &amp; Keahlian</h2>
+
+            <div class="cert-grid">
+                <!-- 1. Cisco Cybersecurity -->
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="Badge_CISCO_Introduction Cybersecurity.png" 
+                             class="img-cisco" 
+                             alt="Sertifikat Cisco Introduction to Cybersecurity"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/400x300/1e1e1e/e0e0e0?text=Cisco+Cybersecurity'">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Introduction to Cybersecurity</h3>
+                        <p><i class="fas fa-university"></i> Cisco Networking Academy</p>
+                    </div>
+                </div>
+
+                <!-- 2. Cisco Junior Analyst -->
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="Badge_CISCO_Junior Cybersecurity Analyst Career Path.png" 
+                             class="img-cisco" 
+                             alt="Sertifikat Cisco Junior Cybersecurity Analyst"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/400x300/1e1e1e/e0e0e0?text=Cisco+Junior+Analyst'">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Junior Cybersecurity Analyst</h3>
+                        <p><i class="fas fa-university"></i> Cisco Networking Academy</p>
+                    </div>
+                </div>
+
+                <!-- 3. Aguna Network Fundamental -->
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="Sertifikat Aguna Course Network Fundamental.png" 
+                             class="img-landscape" 
+                             alt="Sertifikat Aguna Course Network Fundamental"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/400x300/1e1e1e/e0e0e0?text=Network+Fundamental'">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Network Fundamental</h3>
+                        <p><i class="fas fa-certificate"></i> Aguna Course</p>
+                    </div>
+                </div>
+
+                <!-- 4. Aguna VM Fundamental -->
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="Sertifikat Aguna Course VM Fundamental.png" 
+                             class="img-landscape" 
+                             alt="Sertifikat Aguna Course VM Fundamental"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/400x300/1e1e1e/e0e0e0?text=VM+Fundamental'">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Virtual Machine Fundamental</h3>
+                        <p><i class="fas fa-certificate"></i> Aguna Course</p>
+                    </div>
+                </div>
+
+                <!-- 5. English Discoveries -->
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="Sertifikat Englsih Discoveries.png" 
+                             class="img-contain" 
+                             alt="Sertifikat English Discoveries"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/400x300/1e1e1e/e0e0e0?text=English+Discoveries'">
+                    </div>
+                    <div class="cert-info">
+                        <h3>English Discoveries</h3>
+                        <p><i class="fas fa-language"></i> TOEIC Excellence Program</p>
+                    </div>
+                </div>
+
+                <!-- 6. IDN 20 Oktober 2025 -->
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="Sertifikat IDN 20 Oktober 2025.png" 
+                             class="img-contain" 
+                             alt="Sertifikat IDN Openstack Webinar"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/400x300/1e1e1e/e0e0e0?text=IDN+Openstack+Webinar'">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Webinar "Own Your Cloud Journey with Openstack"</h3>
+                        <p><i class="fas fa-desktop"></i> ID-Networkers (20 Oktober 2025)</p>
+                    </div>
+                </div>
+
+                <!-- 7. IDN 27 Agustus 2025 -->
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="Sertifikat IDN 27 Agustus 2025.png" 
+                             class="img-contain" 
+                             alt="Sertifikat IDN Training"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/400x300/1e1e1e/e0e0e0?text=IDN+Training'">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Training / Webinar IDN</h3>
+                        <p><i class="fas fa-desktop"></i> ID-Networkers (27 Agustus 2025)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="kontak">
+            <h2 class="section-title">Kontak Saya</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:fernaldisoepono@smkwikrama.sch.id">fernaldisoepono@smkwikrama.sch.id</a>
+                </div>
+                <div class="contact-item instagram">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/fernld.i/" target="_blank" rel="noopener noreferrer">@fernld.i</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2025 Fernaldi Soepono — SMK Wikrama Bogor
+        </footer>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ========================================
+            // THEME TOGGLE
+            // ========================================
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+
+            function toggleTheme() {
+                document.body.classList.toggle('light-mode');
+                if (document.body.classList.contains('light-mode')) {
+                    themeIcon.className = 'fas fa-sun';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    themeIcon.className = 'fas fa-moon';
+                    localStorage.setItem('theme', 'dark');
+                }
+            }
+
+            // Load saved theme
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+                themeIcon.className = 'fas fa-sun';
+            }
+
+            themeToggle.addEventListener('click', toggleTheme);
+
+            // ========================================
+            // SMOOTH SCROLL NAV
+            // ========================================
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const offset = 80;
+                            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                            window.scrollTo({
+                                top: elementPosition - offset,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // ========================================
+            // BACK TO TOP
+            // ========================================
+            const backBtn = document.getElementById('backToTopBtn');
+
+            function toggleBackToTop() {
+                if (window.scrollY > 400) {
+                    backBtn.classList.add('show');
+                } else {
+                    backBtn.classList.remove('show');
+                }
+            }
+
+            window.addEventListener('scroll', toggleBackToTop);
+            toggleBackToTop();
+
+            backBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // ========================================
+            // CERTIFICATE CARDS ANIMATION
+            // ========================================
+            const certCards = document.querySelectorAll('.cert-card');
+
+            function revealCertCards() {
+                certCards.forEach((card, index) => {
+                    const rect = card.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight - 100;
+                    if (isVisible) {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 80);
+                    }
+                });
+            }
+
+            setTimeout(revealCertCards, 300);
+
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(revealCertCards, 100);
+            });
+
+            // ========================================
+            // SECTION TITLES ANIMATION
+            // ========================================
+            const sectionTitles = document.querySelectorAll('.section-title');
+
+            function revealSectionTitles() {
+                sectionTitles.forEach(title => {
+                    const rect = title.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        title.classList.add('visible');
+                    }
+                });
+            }
+
+            setTimeout(revealSectionTitles, 200);
+            window.addEventListener('scroll', revealSectionTitles);
+
+            // ========================================
+            // PROGRESS BARS
+            // ========================================
+            const progressFills = document.querySelectorAll('.progress-fill');
+
+            function animateProgressBars() {
+                progressFills.forEach(fill => {
+                    const rect = fill.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50 && !fill.classList.contains('animated')) {
+                        const width = fill.dataset.width;
+                        setTimeout(() => {
+                            fill.style.setProperty('--target-width', width + '%');
+                            fill.classList.add('animated');
+                        }, 300);
+                    }
+                });
+            }
+
+            setTimeout(animateProgressBars, 500);
+            window.addEventListener('scroll', animateProgressBars);
+
+            // ========================================
+            // MODAL
+            // ========================================
+            const modal = document.getElementById('certModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalInfo = document.getElementById('modalInfo');
+            const modalClose = document.getElementById('modalClose');
+
+            certCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (e.target.closest('a')) return;
+
+                    const img = this.querySelector('.cert-img-wrapper img');
+                    const title = this.querySelector('h3')?.textContent || 'Sertifikat';
+                    const info = this.querySelector('p')?.textContent || '';
+
+                    if (img) {
+                        modalImg.src = img.src;
+                        modalImg.alt = img.alt || title;
+                        modalInfo.innerHTML = `
+                            <h3>${title}</h3>
+                            <p>${info}</p>
+                        `;
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            modalClose.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
+            });
+
+            // ========================================
+            // CONTACT ITEM HOVER EFFECT
+            // ========================================
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.backgroundColor = 'var(--bg-hover)';
+                });
+                item.addEventListener('mouseleave', () => {
+                    item.style.backgroundColor = 'var(--bg-secondary)';
+                });
+            });
+
+            console.log('✅ Portfolio Fernaldi Soepono loaded successfully!');
+
+        })();
+    </script>
+
+</body>
+</html>
